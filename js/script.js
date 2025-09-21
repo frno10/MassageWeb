@@ -417,6 +417,16 @@ function initializeNavigation() {
         navMenu.classList.toggle('active');
         navToggle.classList.toggle('active');
         
+        // Adjust floating CTA position when mobile menu is open
+        const floatingCTA = document.getElementById('floating-cta');
+        if (floatingCTA) {
+            if (navMenu.classList.contains('active')) {
+                floatingCTA.style.transform = 'translateY(60px)';
+            } else {
+                floatingCTA.style.transform = '';
+            }
+        }
+        
         // Prevent body scroll when menu is open
         if (navMenu.classList.contains('active')) {
             document.body.style.overflow = 'hidden';
@@ -431,6 +441,12 @@ function initializeNavigation() {
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
             document.body.style.overflow = '';
+            
+            // Reset floating CTA position
+            const floatingCTA = document.getElementById('floating-cta');
+            if (floatingCTA) {
+                floatingCTA.style.transform = '';
+            }
         });
     });
     
@@ -440,6 +456,12 @@ function initializeNavigation() {
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
             document.body.style.overflow = '';
+            
+            // Reset floating CTA position
+            const floatingCTA = document.getElementById('floating-cta');
+            if (floatingCTA) {
+                floatingCTA.style.transform = '';
+            }
         }
     });
 }
@@ -569,6 +591,62 @@ function initializeNavbarScroll() {
         
         lastScrollTop = scrollTop;
     });
+}
+
+// ===== FLOATING CTA BUTTON =====
+
+function initializeFloatingCTA() {
+    const floatingCTA = document.getElementById('floating-cta');
+    const heroSection = document.getElementById('home');
+    
+    if (!floatingCTA || !heroSection) return;
+    
+    function toggleFloatingCTA() {
+        const heroHeight = heroSection.offsetHeight;
+        const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Show button when scrolled past 70% of hero section
+        if (scrollPosition > heroHeight * 0.7) {
+            floatingCTA.classList.add('show');
+        } else {
+            floatingCTA.classList.remove('show');
+        }
+    }
+    
+    // Throttle scroll events for better performance
+    let isThrottled = false;
+    window.addEventListener('scroll', () => {
+        if (!isThrottled) {
+            toggleFloatingCTA();
+            isThrottled = true;
+            setTimeout(() => {
+                isThrottled = false;
+            }, 16); // ~60fps
+        }
+    });
+    
+    // Initial check
+    toggleFloatingCTA();
+    
+    // Handle clicks with smooth scrolling
+    const floatingButton = floatingCTA.querySelector('.floating-cta-button');
+    if (floatingButton) {
+        floatingButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = floatingButton.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                const headerHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
 }
 
 // ===== FORM HANDLING =====
@@ -725,6 +803,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeFAQ();
     initializeScrollAnimations();
     initializeNavbarScroll();
+    initializeFloatingCTA();
     initializeFormHandling();
     initializeGallery();
     initializePerformanceOptimizations();
