@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "Advanced Tab Manager",
+  "version": "1.0.0",
+  "description": "Comprehensive tab management solution to organize, group, and control your browsing chaos",
+  
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab",
+    "tabGroups"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Tab Manager",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "options_page": "options.html",
+
+  "commands": {
+    "close-duplicates": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+D",
+        "mac": "Command+Shift+D"
+      },
+      "description": "Close duplicate tabs"
+    },
+    "suspend-tabs": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Suspend inactive tabs"
+    }
+  }
+}
+

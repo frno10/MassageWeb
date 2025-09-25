@@ -49,7 +49,7 @@ A modern, mobile-first website for a cozy massage studio, featuring multilingual
    # Using PHP
    php -S localhost:3000
    ```
-3. **Open your browser** and visit `http://localhost:3000`
+3. **Open your browser** and visit `http://localhost:3015`
 
 ### File Structure
 ```

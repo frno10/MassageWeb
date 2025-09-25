@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Tab Manager - Settings</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🗂️ Advanced Tab Manager Settings</h1>
+            <p>Customize your tab management experience</p>
+        </header>
+
+        <main class="main">
+            <div class="settings-grid">
+                <!-- Auto Suspension Settings -->
+                <section class="settings-section">
+                    <h2>💤 Auto Suspension</h2>
+                    <p class="section-description">Automatically suspend inactive tabs to save memory</p>
+                    
+                    <div class="setting-item">
+                        <label for="autoSuspendTime">Auto-suspend tabs after:</label>
+                        <div class="input-group">
+                            <input type="number" id="autoSuspendTime" min="0" max="1440" step="5">
+                            <span class="input-suffix">minutes</span>
+                        </div>
+                        <small>Set to 0 to disable auto-suspension</small>
+                    </div>
+
+                    <div class="setting-item">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="suspendPinned">
+                            <span class="checkmark"></span>
+                            Allow suspending pinned tabs
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Tab Limits -->
+                <section class="settings-section">
+                    <h2>📊 Tab Limits</h2>
+                    <p class="section-description">Set limits to prevent tab overload</p>
+                    
+                    <div class="setting-item">
+                        <label for="maxTabs">Maximum number of tabs:</label>
+                        <div class="input-group">
+                            <input type="number" id="maxTabs" min="0" max="500" step="1">
+                            <span class="input-suffix">tabs</span>
+                        </div>
+                        <small>Set to 0 for no limit</small>
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="warningThreshold">Show warning at:</label>
+                        <div class="input-group">
+                            <input type="number" id="warningThreshold" min="0" max="400" step="1">
+                            <span class="input-suffix">tabs</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Automatic Actions -->
+                <section class="settings-section">
+                    <h2>🤖 Automatic Actions</h2>
+                    <p class="section-description">Let the extension manage tabs automatically</p>
+                    
+                    <div class="setting-item">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="autoCloseDuplicates">
+                            <span class="checkmark"></span>
+                            Automatically close duplicate tabs
+                        </label>
+                    </div>
+
+                    <div class="setting-item">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="autoGroupSimilar">
+                            <span class="checkmark"></span>
+                            Automatically group similar tabs
+                        </label>
+                    </div>
+
+                    <div class="setting-item">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="autoSuspendBackground">
+                            <span class="checkmark"></span>
+                            Suspend tabs when switching windows
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Notifications -->
+                <section class="settings-section">
+                    <h2>🔔 Notifications</h2>
+                    <p class="section-description">Control when and how you're notified</p>
+                    
+                    <div class="setting-item">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="enableNotifications">
+                            <span class="checkmark"></span>
+                            Enable notifications
+                        </label>
+                    </div>
+
+                    <div class="setting-item">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="notifyOnSuspend">
+                            <span class="checkmark"></span>
+                            Notify when tabs are suspended
+                        </label>
+                    </div>
+
+                    <div class="setting-item">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="notifyOnDuplicates">
+                            <span class="checkmark"></span>
+                            Notify when duplicates are found
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Appearance -->
+                <section class="settings-section">
+                    <h2>🎨 Appearance</h2>
+                    <p class="section-description">Customize the extension's look and feel</p>
+                    
+                    <div class="setting-item">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="showFavicons">
+                            <span class="checkmark"></span>
+                            Show website favicons
+                        </label>
+                    </div>
+
+                    <div class="setting-item">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="compactView">
+                            <span class="checkmark"></span>
+                            Use compact view in popup
+                        </label>
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="theme">Theme:</label>
+                        <select id="theme">
+                            <option value="auto">Auto (System)</option>
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
+                        </select>
+                    </div>
+                </section>
+
+                <!-- Advanced Settings -->
+                <section class="settings-section">
+                    <h2>⚡ Advanced</h2>
+                    <p class="section-description">Power user features</p>
+                    
+                    <div class="setting-item">
+                        <label for="sessionSaveInterval">Save session every:</label>
+                        <div class="input-group">
+                            <input type="number" id="sessionSaveInterval" min="0" max="60" step="1">
+                            <span class="input-suffix">minutes</span>
+                        </div>
+                        <small>Set to 0 to disable auto-save</small>
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="maxSavedSessions">Keep max sessions:</label>
+                        <div class="input-group">
+                            <input type="number" id="maxSavedSessions" min="1" max="50" step="1">
+                            <span class="input-suffix">sessions</span>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="enableKeyboardShortcuts">
+                            <span class="checkmark"></span>
+                            Enable keyboard shortcuts
+                        </label>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="actions">
+                <button id="saveSettings" class="btn btn-primary">💾 Save Settings</button>
+                <button id="resetSettings" class="btn btn-secondary">🔄 Reset to Defaults</button>
+                <button id="exportSettings" class="btn btn-outline">📤 Export Settings</button>
+                <button id="importSettings" class="btn btn-outline">📥 Import Settings</button>
+                <input type="file" id="importFile" accept=".json" style="display: none;">
+            </div>
+
+            <!-- Statistics -->
+            <section class="stats-section">
+                <h2>📈 Usage Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalTabsManaged">0</div>
+                        <div class="stat-label">Total Tabs Managed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="tabsSuspended">0</div>
+                        <div class="stat-label">Tabs Suspended</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="duplicatesClosed">0</div>
+                        <div class="stat-label">Duplicates Closed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="memorySaved">0MB</div>
+                        <div class="stat-label">Est. Memory Saved</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="status-message" id="statusMessage"></div>
+            <div class="version-info">
+                Version 1.0.0 | <a href="#" id="helpLink">Help & Support</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>
+

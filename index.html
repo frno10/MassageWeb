@@ -39,7 +39,7 @@
         <div class="container">
             <div class="nav-brand">
                 <a href="#home" class="brand-link">
-                    <span class="brand-text">Masáže</span>
+                    <img src="images/logo-sunny.png" alt="Sunny Massage Studio Logo" class="brand-logo">
                 </a>
             </div>
             
@@ -99,7 +99,7 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Professional and caring massage therapist" class="therapist-photo">
+                    <img src="images/headshot.jpg" alt="Professional and caring massage therapist" class="therapist-photo">
                 </div>
                 <div class="about-text">
                     <h2 class="section-title" data-key="about.title">O mne</h2>
@@ -231,6 +231,19 @@
                     <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Luxury spa natural elements" class="gallery-image">
                 </div>
             </div>
+            
+            <!-- Studio Video -->
+            <div class="gallery-video">
+                <h3 class="video-title" data-key="gallery.video.title">Pozrite si naše štúdio</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/PGoGF97FGTQ?si=QFowlCA5prdbdF1P" 
+                            title="Massage Studio Tour" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -286,6 +299,15 @@
                 </div>
             </div>
             
+            <!-- Visual Price List -->
+            <div class="pricing-visual">
+                <h3 class="pricing-visual-title" data-key="pricing.visual.title">Kompletný cenník</h3>
+                <p class="pricing-visual-subtitle" data-key="pricing.visual.subtitle">Kliknite na obrázok pre zväčšenie</p>
+                <div class="pricelist-image-container" onclick="openLightbox()">
+                    <img src="images/pricelist.jpg" alt="Complete massage services price list" class="pricelist-image">
+                </div>
+            </div>
+            
             <div class="gift-cards">
                 <h3 class="gift-cards-title" data-key="pricing.gifts.title">Darčekové poukazy</h3>
                 <p class="gift-cards-description" data-key="pricing.gifts.description">
@@ -301,41 +323,55 @@
     <section class="testimonials">
         <div class="container">
             <h2 class="section-title text-center" data-key="testimonials.title">Čo hovoria naši klienti</h2>
+            <p class="section-subtitle text-center" data-key="testimonials.subtitle">
+                Skutočné recenzie z Google Maps • Hodnotenie 5.0/5 ⭐
+            </p>
             
-            <div class="testimonials-grid">
-                <div class="testimonial-item">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text" data-key="testimonials.review1">
-                        "Úžasná masáž! Cítim sa úplne znovuzrodený. Atmosféra v štúdiu je naozaj upokojujúca 
-                        a prístup masérky je veľmi profesionálny."
-                    </p>
-                    <div class="testimonial-author">
-                        <strong data-key="testimonials.author1">Mária K.</strong>
-                    </div>
-                </div>
-                
-                <div class="testimonial-item">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text" data-key="testimonials.review2">
-                        "Maderoterapia ma úplne nadchla! Po niekoľkých sedeniach vidím výrazné zlepšenie. 
-                        Určite sa vrátim."
-                    </p>
-                    <div class="testimonial-author">
-                        <strong data-key="testimonials.author2">Petra S.</strong>
-                    </div>
-                </div>
-                
-                <div class="testimonial-item">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text" data-key="testimonials.review3">
-                        "Bankovanie mi pomohlo s bolesťou chrbta. Síce to zanechalo stopy, ale úľava 
-                        bola okamžitá. Odporúčam!"
-                    </p>
-                    <div class="testimonial-author">
-                        <strong data-key="testimonials.author3">Ján M.</strong>
-                    </div>
-                </div>
-            </div>
+             <div class="testimonials-grid">
+                 <div class="testimonial-item google-review">
+                     <div class="testimonial-header">
+                         <div class="testimonial-stars">★★★★★</div>
+                         <span class="review-source">Google</span>
+                     </div>
+                     <p class="testimonial-text" data-key="testimonials.review1">
+                         "Chcem sa zo srdca poďakovať úžasnej pani masérke, ktorá mi poskytla nielen fyzickú úľavu, 
+                         ale aj duševný oddych. Jej prístup je veľmi profesionálny, no zároveň ľudský a empatický. 
+                         Má zlaté ruky a dar vytvoriť príjemnú, uvoľnenú atmosféru už od prvého kontaktu. 
+                         Priestor je nádherne zariadený, čistý a pokojný, čo len umocňuje celkový zážitok z masáže. 
+                         Určite sa vrátim a odporúčam každému, kto hľadá kvalitné a profesionálne služby!"
+                     </p>
+                     <div class="testimonial-author">
+                         <strong data-key="testimonials.author1">Stella S.</strong>
+                         <span class="review-date">pred mesiacom</span>
+                     </div>
+                 </div>
+                 
+                 <div class="testimonial-item google-review">
+                     <div class="testimonial-header">
+                         <div class="testimonial-stars">★★★★★</div>
+                         <span class="review-source">Google</span>
+                     </div>
+                     <p class="testimonial-text" data-key="testimonials.review2">
+                         "Odporúčam všetkými 10! Skvelá masérka, šikovná, starostlivá, profesionálny prístup 
+                         a neskutočne príjemná aj osobnostne. Masáž nad moje očakávania a určite plánujem sa vrátiť! 
+                         Maderoterapia bola úžasná, výsledky vidím už po prvom sedení. Pani masérka vie presne 
+                         čo robí, všetko mi vysvetlila a celý proces bol príjemný a relaxačný."
+                     </p>
+                     <div class="testimonial-author">
+                         <strong data-key="testimonials.author2">Anna T.</strong>
+                         <span class="review-date">pred 4 mesiacmi</span>
+                     </div>
+                 </div>
+             </div>
+             
+             <div class="testimonials-cta">
+                 <a href="https://www.google.com/maps/place/SUNNY+mas%C3%A1%C5%BEny+sal%C3%B3n/@48.7213725,21.2523804,45m/data=!3m1!1e3!4m10!1m2!2m1!1smassage!3m6!1s0x473ee118abe7449b:0x600b5a7419797a2!8m2!3d48.7214132!4d21.2525163!15sCgdtYXNzYWdlkgERbWFzc2FnZV90aGVyYXBpc3SqATwQASoLIgdtYXNzYWdlKAAyHhEBIhoVktMb_Cn9IZPM_lFYrj1w-jSYcGk01-TxGDILEAIiB21hc3NhZ2XgAQA!16s%2Fg%2F11x2_134nb" 
+                    target="_blank" 
+                    class="testimonials-link" 
+                    data-key="testimonials.view_all">
+                     Zobraziť všetkých 15 recenzií na Google Maps
+                 </a>
+             </div>
         </div>
     </section>
 
@@ -453,23 +489,30 @@
                     <div class="contact-details">
                         <div class="contact-item">
                             <strong data-key="contact.info.phone">Telefón:</strong>
-                            <a href="tel:+421901234567">+421 901 234 567</a>
+                            <a href="tel:+421915931657">+421 915 931 657</a>
                         </div>
                         <div class="contact-item">
                             <strong data-key="contact.info.whatsapp">WhatsApp:</strong>
-                            <a href="https://wa.me/421901234567">+421 901 234 567</a>
+                            <a href="https://wa.me/421915931657">+421 915 931 657</a>
                         </div>
                         <div class="contact-item">
-                            <strong data-key="contact.info.email">Email:</strong>
-                            <a href="mailto:info@masaze-kosice.sk">info@masaze-kosice.sk</a>
+                            <strong data-key="contact.info.instagram">Instagram:</strong>
+                            <a href="https://www.instagram.com/sunny.massage.ke/" target="_blank">@sunny.massage.ke</a>
                         </div>
                         <div class="contact-item">
                             <strong data-key="contact.info.address">Adresa:</strong>
-                            <span>Hlavná 123, 040 01 Košice</span>
+                            <span>Moyzesova 1033/36, 040 01 Staré Mesto, Košice</span>
                         </div>
                         <div class="contact-item">
                             <strong data-key="contact.info.hours">Otváracie hodiny:</strong>
-                            <span data-key="contact.info.schedule">Po-Pi: 9:00-19:00, So: 9:00-15:00</span>
+                            <span data-key="contact.info.schedule">Po-Pi: 9:00-18:00</span>
+                        </div>
+                        <div class="contact-item google-rating">
+                            <strong data-key="contact.info.rating">Google hodnotenie:</strong>
+                            <span class="rating-display">
+                                <span class="stars">⭐⭐⭐⭐⭐</span>
+                                <span class="rating-text">5.0 (15 recenzií)</span>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -479,23 +522,42 @@
                 <div class="map-container">
                     <h3 class="map-title" data-key="contact.map.title">Kde nás nájdete</h3>
                     <div class="map-iframe">
-                        <!-- Google Maps placeholder -->
-                        <div class="iframe-placeholder">
-                            <p data-key="contact.map.placeholder">
-                                Google Maps mapa bude integrovaná tu
-                            </p>
-                        </div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2618.4087483742624!2d21.250276315744385!3d48.721413279285044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ee118abe7449b%3A0x600b5a7419797a2!2sSUNNY%20mas%C3%A1%C5%BEny%20sal%C3%B3n!5e0!3m2!1ssk!2ssk!4v1695646658901!5m2!1ssk!2ssk" 
+                                width="100%" 
+                                height="300" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="SUNNY masážny salón location">
+                        </iframe>
                     </div>
                 </div>
                 
                 <div class="reviews-container">
                     <h3 class="reviews-title" data-key="contact.reviews.title">Google recenzie</h3>
                     <div class="reviews-iframe">
-                        <!-- Google Reviews placeholder -->
-                        <div class="iframe-placeholder">
-                            <p data-key="contact.reviews.placeholder">
-                                Google Reviews widget bude integrovaný tu
+                        <div class="google-reviews-card">
+                            <div class="reviews-header">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="google-logo">
+                                <div class="reviews-info">
+                                    <h4>SUNNY masážny salón</h4>
+                                    <div class="rating-display">
+                                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                                        <span class="rating-text">5.0 • 15 recenzií</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="reviews-summary" data-key="contact.reviews.summary">
+                                Všetky recenzie sú 5-hviezdičkové! Klienti chvália profesionálny prístup, 
+                                efektívne masáže a príjemnú atmosféru.
                             </p>
+                            <a href="https://www.google.com/maps/place/SUNNY+mas%C3%A1%C5%BEny+sal%C3%B3n/@48.7213725,21.2523804,45m/data=!3m1!1e3!4m10!1m2!2m1!1smassage!3m6!1s0x473ee118abe7449b:0x600b5a7419797a2!8m2!3d48.7214132!4d21.2525163!15sCgdtYXNzYWdlkgERbWFzc2FnZV90aGVyYXBpc3SqATwQASoLIgdtYXNzYWdlKAAyHhABIhoVktMb_Cn9IZPM_lFYrj1w-jSYcGk01-TxGDILEAIiB21hc3NhZ2XgAQA!16s%2Fg%2F11x2_134nb" 
+                               target="_blank" 
+                               class="view-reviews-btn" 
+                               data-key="contact.reviews.view">
+                                Zobraziť všetky recenzie
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -537,9 +599,9 @@
                     <div class="footer-section">
                         <h4 data-key="footer.contact">Kontakt</h4>
                         <ul>
-                            <li><a href="tel:+421901234567">+421 901 234 567</a></li>
-                            <li><a href="mailto:info@masaze-kosice.sk">info@masaze-kosice.sk</a></li>
-                            <li><span>Hlavná 123, Košice</span></li>
+                            <li><a href="tel:+421915931657">+421 915 931 657</a></li>
+                            <li><a href="https://www.instagram.com/sunny.massage.ke/" target="_blank">@sunny.massage.ke</a></li>
+                            <li><span>Moyzesova 1033/36, Košice</span></li>
                         </ul>
                     </div>
                 </div>
@@ -552,6 +614,14 @@
             </div>
         </div>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-overlay" class="lightbox-overlay" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <img src="images/pricelist.jpg" alt="Complete massage services price list" class="lightbox-image">
+            <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox">×</button>
+        </div>
+    </div>
 
     <!-- JavaScript -->
     <script src="js/script.js"></script>

@@ -1,3 +1,24 @@
+// ===== LIGHTBOX FUNCTIONALITY =====
+
+function openLightbox() {
+    const overlay = document.getElementById('lightbox-overlay');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeLightbox() {
+    const overlay = document.getElementById('lightbox-overlay');
+    overlay.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+}
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeLightbox();
+    }
+});
+
 // ===== MULTILINGUAL SYSTEM =====
 
 const translations = {
@@ -53,6 +74,7 @@ const translations = {
         // Gallery Section
         'gallery.title': 'Naše štúdio',
         'gallery.subtitle': 'Útulné prostredie pre váš odpočinok',
+        'gallery.video.title': 'Pozrite si naše štúdio',
         
         // Pricing Section
         'pricing.title': 'Cenník a darčekové poukazy',
@@ -65,18 +87,20 @@ const translations = {
         'pricing.special.madero': 'Maderoterapia',
         'pricing.special.cupping': 'Bankovanie',
         'pricing.special.combo': 'Kombinovaná terapia',
+        'pricing.visual.title': 'Kompletný cenník',
+        'pricing.visual.subtitle': 'Kliknite na obrázok pre zväčšenie',
         'pricing.gifts.title': 'Darčekové poukazy',
         'pricing.gifts.description': 'Darujte svojim blízkym chvíle relaxácie. Darčekové poukazy sú dostupné na všetky naše služby a majú platnosť 12 mesiacov.',
         'pricing.gifts.button': 'Objednať darčekový poukaz',
         
         // Testimonials Section
         'testimonials.title': 'Čo hovoria naši klienti',
-        'testimonials.review1': 'Úžasná masáž! Cítim sa úplne znovuzrodený. Atmosféra v štúdiu je naozaj upokojujúca a prístup masérky je veľmi profesionálny.',
-        'testimonials.author1': 'Mária K.',
-        'testimonials.review2': 'Maderoterapia ma úplne nadchla! Po niekoľkých sedeniach vidím výrazné zlepšenie. Určite sa vrátim.',
-        'testimonials.author2': 'Petra S.',
-        'testimonials.review3': 'Bankovanie mi pomohlo s bolesťou chrbta. Síce to zanechalo stopy, ale úľava bola okamžitá. Odporúčam!',
-        'testimonials.author3': 'Ján M.',
+        'testimonials.subtitle': 'Skutočné recenzie z Google Maps • Hodnotenie 5.0/5 ⭐',
+        'testimonials.review1': 'Chcem sa zo srdca poďakovať úžasnej pani masérke, ktorá mi poskytla nielen fyzickú úľavu, ale aj duševný oddych. Jej prístup je veľmi profesionálny, no zároveň ľudský a empatický. Má zlaté ruky a dar vytvoriť príjemnú, uvoľnenú atmosféru už od prvého kontaktu. Priestor je nádherne zariadený, čistý a pokojný, čo len umocňuje celkový zážitok z masáže. Určite sa vrátim a odporúčam každému, kto hľadá kvalitné a profesionálne služby!',
+        'testimonials.author1': 'Stella S.',
+        'testimonials.review2': 'Odporúčam všetkými 10! Skvelá masérka, šikovná, starostlivá, profesionálny prístup a neskutočne príjemná aj osobnostne. Masáž nad moje očakávania a určite plánujem sa vrátiť! Maderoterapia bola úžasná, výsledky vidím už po prvom sedení. Pani masérka vie presne čo robí, všetko mi vysvetlila a celý proces bol príjemný a relaxačný.',
+        'testimonials.author2': 'Anna T.',
+        'testimonials.view_all': 'Zobraziť všetkých 15 recenzií na Google Maps',
         
         // FAQ Section
         'faq.title': 'Často kladené otázky',
@@ -101,10 +125,13 @@ const translations = {
         'contact.info.title': 'Kontaktné informácie',
         'contact.info.phone': 'Telefón:',
         'contact.info.whatsapp': 'WhatsApp:',
-        'contact.info.email': 'Email:',
+        'contact.info.instagram': 'Instagram:',
         'contact.info.address': 'Adresa:',
         'contact.info.hours': 'Otváracie hodiny:',
-        'contact.info.schedule': 'Po-Pi: 9:00-19:00, So: 9:00-15:00',
+        'contact.info.schedule': 'Po-Pi: 9:00-18:00',
+        'contact.info.rating': 'Google hodnotenie:',
+        'contact.reviews.summary': 'Všetky recenzie sú 5-hviezdičkové! Klienti chvália profesionálny prístup, efektívne masáže a príjemnú atmosféru.',
+        'contact.reviews.view': 'Zobraziť všetky recenzie',
         'contact.map.title': 'Kde nás nájdete',
         'contact.map.placeholder': 'Google Maps mapa bude integrovaná tu',
         'contact.reviews.title': 'Google recenzie',
@@ -170,6 +197,7 @@ const translations = {
         // Gallery Section
         'gallery.title': 'Our Studio',
         'gallery.subtitle': 'Cozy environment for your relaxation',
+        'gallery.video.title': 'Take a look at our studio',
         
         // Pricing Section
         'pricing.title': 'Pricing & Gift Cards',
@@ -182,18 +210,20 @@ const translations = {
         'pricing.special.madero': 'Maderotherapy',
         'pricing.special.cupping': 'Cupping',
         'pricing.special.combo': 'Combination Therapy',
+        'pricing.visual.title': 'Complete Price List',
+        'pricing.visual.subtitle': 'Click image to enlarge',
         'pricing.gifts.title': 'Gift Cards',
         'pricing.gifts.description': 'Give your loved ones moments of relaxation. Gift cards are available for all our services and are valid for 12 months.',
         'pricing.gifts.button': 'Order Gift Card',
         
         // Testimonials Section
         'testimonials.title': 'What Our Clients Say',
-        'testimonials.review1': 'Amazing massage! I feel completely reborn. The atmosphere in the studio is truly calming and the therapist\'s approach is very professional.',
-        'testimonials.author1': 'Maria K.',
-        'testimonials.review2': 'Maderotherapy completely enchanted me! After several sessions I can see significant improvement. I will definitely be back.',
-        'testimonials.author2': 'Petra S.',
-        'testimonials.review3': 'Cupping helped me with back pain. Although it left marks, the relief was immediate. I recommend it!',
-        'testimonials.author3': 'John M.',
+        'testimonials.subtitle': 'Real reviews from Google Maps • Rating 5.0/5 ⭐',
+        'testimonials.review1': 'I want to thank from the bottom of my heart the amazing massage therapist who provided me not only physical relief, but also mental rest. Her approach is very professional, yet human and empathetic. She has golden hands and the gift to create a pleasant, relaxed atmosphere from the very first contact. The space is beautifully furnished, clean and peaceful, which only enhances the overall massage experience. I will definitely return and recommend to anyone looking for quality and professional services!',
+        'testimonials.author1': 'Stella S.',
+        'testimonials.review2': 'I recommend with all 10! Excellent massage therapist, skilled, caring, professional approach and incredibly pleasant personality-wise. Massage exceeded my expectations and I definitely plan to return! Maderotherapy was amazing, I can see results after just the first session. The massage therapist knows exactly what she is doing, explained everything to me and the whole process was pleasant and relaxing.',
+        'testimonials.author2': 'Anna T.',
+        'testimonials.view_all': 'View all 15 reviews on Google Maps',
         
         // FAQ Section
         'faq.title': 'Frequently Asked Questions',
@@ -218,10 +248,13 @@ const translations = {
         'contact.info.title': 'Contact Information',
         'contact.info.phone': 'Phone:',
         'contact.info.whatsapp': 'WhatsApp:',
-        'contact.info.email': 'Email:',
+        'contact.info.instagram': 'Instagram:',
         'contact.info.address': 'Address:',
         'contact.info.hours': 'Opening Hours:',
-        'contact.info.schedule': 'Mon-Fri: 9:00-19:00, Sat: 9:00-15:00',
+        'contact.info.schedule': 'Mon-Fri: 9:00-18:00',
+        'contact.info.rating': 'Google Rating:',
+        'contact.reviews.summary': 'All reviews are 5-star! Clients praise professional approach, effective massages and pleasant atmosphere.',
+        'contact.reviews.view': 'View all reviews',
         'contact.map.title': 'Find Us',
         'contact.map.placeholder': 'Google Maps will be integrated here',
         'contact.reviews.title': 'Google Reviews',
@@ -287,6 +320,7 @@ const translations = {
         // Gallery Section
         'gallery.title': 'Stúdiónk',
         'gallery.subtitle': 'Hangulatos környezet az Ön pihenéséhez',
+        'gallery.video.title': 'Nézze meg stúdiónkat',
         
         // Pricing Section
         'pricing.title': 'Árak és ajándékutalványok',
@@ -299,18 +333,20 @@ const translations = {
         'pricing.special.madero': 'Maderoterápia',
         'pricing.special.cupping': 'Köpölyözés',
         'pricing.special.combo': 'Kombinált terápia',
+        'pricing.visual.title': 'Teljes árlista',
+        'pricing.visual.subtitle': 'Kattintson a képre a nagyításhoz',
         'pricing.gifts.title': 'Ajándékutalványok',
         'pricing.gifts.description': 'Ajándékozzon szeretteinek pihenés pillanatokat. Ajándékutalványok minden szolgáltatásunkra elérhetők és 12 hónapig érvényesek.',
         'pricing.gifts.button': 'Ajándékutalvány rendelése',
         
         // Testimonials Section
         'testimonials.title': 'Mit mondanak ügyfeleink',
-        'testimonials.review1': 'Csodálatos masszázs! Teljesen újjászületettnek érzem magam. A stúdió légköre igazán megnyugtató és a masszőr hozzáállása nagyon professzionális.',
-        'testimonials.author1': 'Mária K.',
-        'testimonials.review2': 'A maderoterápia teljesen elbűvölt! Néhány ülés után jelentős javulást látok. Biztosan visszatérek.',
-        'testimonials.author2': 'Petra S.',
-        'testimonials.review3': 'A köpölyözés segített a hátfájdalamban. Bár nyomokat hagyott, a könnyebbülés azonnali volt. Ajánlom!',
-        'testimonials.author3': 'János M.',
+        'testimonials.subtitle': 'Valódi értékelések a Google Mapsről • Értékelés 5.0/5 ⭐',
+        'testimonials.review1': 'Szívből szeretnék köszönetet mondani a csodálatos masszőrnőnek, aki nemcsak fizikai megkönnyebbülést nyújtott, hanem lelki pihenést is. Hozzáállása nagyon professzionális, mégis emberi és empatikus. Arany keze van és megvan a képessége, hogy kellemes, laza légkört teremtsen már az első kontaktustól. A hely gyönyörűen berendezett, tiszta és békés, ami csak fokozza a masszázs élményét. Biztosan visszatérek és mindenkinek ajánlom, aki minőségi és professzionális szolgáltatást keres!',
+        'testimonials.author1': 'Stella S.',
+        'testimonials.review2': 'Minden 10-zel ajánlom! Kiváló masszőr, ügyes, gondoskodó, professzionális hozzáállás és hihetetlenül kellemes személyiség. A masszázs felülmúlta várakozásaimat és biztosan tervezem, hogy visszatérek! A maderoterápia csodálatos volt, már az első ülés után látom az eredményeket. A masszőr pontosan tudja, mit csinál, mindent elmagyarázott nekem, és az egész folyamat kellemes és pihentető volt.',
+        'testimonials.author2': 'Anna T.',
+        'testimonials.view_all': 'Mind a 15 értékelés megtekintése a Google Mapsen',
         
         // FAQ Section
         'faq.title': 'Gyakran ismételt kérdések',
@@ -335,10 +371,13 @@ const translations = {
         'contact.info.title': 'Kapcsolati információk',
         'contact.info.phone': 'Telefon:',
         'contact.info.whatsapp': 'WhatsApp:',
-        'contact.info.email': 'Email:',
+        'contact.info.instagram': 'Instagram:',
         'contact.info.address': 'Cím:',
         'contact.info.hours': 'Nyitvatartás:',
-        'contact.info.schedule': 'Hé-Pé: 9:00-19:00, Szó: 9:00-15:00',
+        'contact.info.schedule': 'Hé-Pé: 9:00-18:00',
+        'contact.info.rating': 'Google értékelés:',
+        'contact.reviews.summary': 'Minden értékelés 5 csillagos! A kliensek dicsérik a professzionális megközelítést, hatékony masszázsokat és kellemes légkört.',
+        'contact.reviews.view': 'Összes értékelés megtekintése',
         'contact.map.title': 'Találjon meg minket',
         'contact.map.placeholder': 'Google Maps lesz itt integrálva',
         'contact.reviews.title': 'Google értékelések',

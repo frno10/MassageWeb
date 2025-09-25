@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Tab Manager</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🗂️ Tab Manager</h1>
+            <div class="tab-count">
+                <span id="tabCount">0</span> tabs open
+            </div>
+        </header>
+
+        <div class="search-section">
+            <input type="text" id="searchTabs" placeholder="🔍 Search tabs..." class="search-input">
+        </div>
+
+        <div class="quick-actions">
+            <button id="closeDuplicates" class="action-btn danger">
+                🗑️ Close Duplicates
+            </button>
+            <button id="suspendTabs" class="action-btn warning">
+                💤 Suspend Inactive
+            </button>
+            <button id="groupSimilar" class="action-btn primary">
+                📁 Group Similar
+            </button>
+            <button id="saveSession" class="action-btn success">
+                💾 Save Session
+            </button>
+        </div>
+
+        <div class="tabs-section">
+            <div class="section-header">
+                <h3>Active Tabs</h3>
+                <div class="view-options">
+                    <button id="viewList" class="view-btn active">📋</button>
+                    <button id="viewGroups" class="view-btn">📁</button>
+                </div>
+            </div>
+            
+            <div id="tabsList" class="tabs-list">
+                <!-- Tabs will be populated by JavaScript -->
+            </div>
+
+            <div id="tabsGroups" class="tabs-groups hidden">
+                <!-- Grouped tabs will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <div class="stat-item">
+                <span class="stat-label">Memory Usage:</span>
+                <span id="memoryUsage" class="stat-value">Calculating...</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Suspended:</span>
+                <span id="suspendedCount" class="stat-value">0</span>
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <button id="openSettings" class="settings-btn">
+                ⚙️ Settings
+            </button>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
+
