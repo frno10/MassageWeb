@@ -785,10 +785,25 @@ section {
 
 .service-photo {
     width: 100%;
-    height: 320px;
+    height: 280px;
     object-fit: cover;
+    object-position: center;
     transition: var(--transition-slow);
     filter: saturate(110%);
+}
+
+/* Vertical image styling - for portrait/vertical images */
+.service-image.vertical-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-photo.vertical-photo {
+    width: 60%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .service-image:hover {
@@ -1773,6 +1788,11 @@ section {
     }
 
     .service-photo {
+        height: 250px;
+    }
+
+    .service-photo.vertical-photo {
+        width: 70%;
         height: 250px;
     }
 

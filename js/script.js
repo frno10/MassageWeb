@@ -35,7 +35,7 @@ const translations = {
         'hero.title.line1': 'Relaxujte.',
         'hero.title.line2': 'Obnovte sa.',
         'hero.title.line3': 'Nájdite rovnováhu.',
-        'hero.subtitle': 'Vítajte v útulnom priestore, kde sa môžete úplne relaxovať a nechať sa unášať pocitom pokoja. Každá masáž je prispôsobená vašim potrebám, aby ste odišli s pocitom obnovy a harmónie.',
+        'hero.subtitle': 'Vitajte v útulnom priestore, kde sa môžete úplne zrelaxovať a nechať sa unášať pocitom pokoja. Každá masáž je prispôsobená vašim potrebám, aby ste odišli s pocitom spokojnosti a harmónie.',
         'hero.cta': 'Rezervovať masáž',
         
         // About Section
@@ -46,11 +46,11 @@ const translations = {
         'about.qualifications': 'Kvalifikácie',
         'about.cert1': 'Certifikovaná masérka',
         'about.cert2': 'Špecializácia na maderoterapiu',
-        'about.cert3': 'Kurz bankovanej terapie',
+        'about.cert3': 'Kurz bankovania',
         'about.cert4': 'Kontinuálne vzdelávanie',
         
         // Services Section
-        'services.title': 'Naše služby',
+        'services.title': 'Moje služby',
         'services.subtitle': 'Každá masáž je jedinečný zážitok prispôsobený vašim potrebám',
         'services.classic.title': 'Klasické masáže',
         'services.classic.description': 'Relaxačné, terapeutické a športové masáže pre každú potrebu. Od uvoľnenia po regeneráciu svalov.',
@@ -119,9 +119,9 @@ const translations = {
         
         // Contact Section
         'contact.title': 'Rezervácia a kontakt',
-        'contact.subtitle': 'Rezervujte si termín alebo nás kontaktujte',
+        'contact.subtitle': 'Rezervujte si termín alebo ma kontaktujte',
         'contact.booking.title': 'Online rezervácia',
-        'contact.booking.placeholder': 'Rezervačný systém bude integrovaný tu<br>(napr. Termino.eu)',
+        'contact.booking.placeholder': 'Rezervačný systém bude integrovaný tu<br>',
         'contact.info.title': 'Kontaktné informácie',
         'contact.info.phone': 'Telefón:',
         'contact.info.whatsapp': 'WhatsApp:',

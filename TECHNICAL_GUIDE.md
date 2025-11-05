@@ -320,7 +320,7 @@ if ('IntersectionObserver' in window) {
 
 <!-- Translatable content -->
 <h1 data-key="hero.title.line1">Relaxujte.</h1>
-<p data-key="hero.subtitle">Vítajte v útulnom priestore...</p>
+<p data-key="hero.subtitle">Vitajte v útulnom priestore...</p>
 ```
 
 ### Translation Management
