@@ -797,6 +797,19 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: transparent;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.service-image.vertical-image::after {
+    display: none;
+}
+
+.service-image.vertical-image::before {
+    display: none;
 }
 
 .service-photo.vertical-photo {
@@ -804,6 +817,10 @@ section {
     height: 280px;
     object-fit: cover;
     object-position: center;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: var(--border-radius-lg);
 }
 
 .service-image:hover {
@@ -821,6 +838,16 @@ section {
 
 .service-image:hover::after {
     opacity: 1;
+}
+
+/* Override hover effects for vertical images */
+.service-image.vertical-image:hover {
+    box-shadow: none;
+}
+
+.service-image.vertical-image:hover::before,
+.service-image.vertical-image:hover::after {
+    display: none;
 }
 
 .service-content {
